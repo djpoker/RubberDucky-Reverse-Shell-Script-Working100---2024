@@ -33,7 +33,7 @@ SETUP THE PAYLOAD:
 
 2. Open the payload or paste it in an Text Editor
 
-3. EDIT <YOUR IP> and <YOUR PORT> with yours
+3. EDIT (YOUR IP) and (YOUR PORT) with yours
 
 ___________________________________
 
@@ -59,11 +59,11 @@ https://nmap.org/ncat/
 
 Windows: 
 1. Open the NetCat app
-2. TYPE:     -lvp <YOUR PORT>
+2. TYPE:     -lvp (YOUR PORT)
 
 Linux: 
 1. Open Terminal
-2. TYPE:      nc -lvp <YOUR PORT>
+2. TYPE:      nc -lvp (YOUR PORT)
 
 
 ___________________________________
