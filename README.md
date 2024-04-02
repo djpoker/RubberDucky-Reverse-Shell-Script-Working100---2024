@@ -35,6 +35,9 @@ SETUP THE PAYLOAD:
 
 3. EDIT (YOUR IP) and (YOUR PORT) with yours
 
+![Screenshot_2024-04-02_21_08_29](https://github.com/djpoker/RubberDucky-Reverse-Shell-Script-Working100---2024/assets/59816538/1fc19450-329e-451b-a6da-202976535669)
+
+
 ___________________________________
 
 (OPTIONALS) you can skip these cause i've preset these:
