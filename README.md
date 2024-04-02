@@ -1,7 +1,5 @@
 # RubberDucky-Reverse-Shell-Script-Working100---2024
 
-# RubberDucky-Reverse-Shell-Script-Working100---2024
-
 
 Hi im Daniel !
 This is a Fresh Netcat base Revese shell script for USB RubberDucky
