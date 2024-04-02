@@ -65,6 +65,7 @@ Linux:
 1. Open Terminal
 2. TYPE:      nc -lvp (YOUR PORT)
 
+![Screenshot_2024-04-02_20_21_05](https://github.com/djpoker/RubberDucky-Reverse-Shell-Script-Working100---2024/assets/59816538/3ac7dae6-1bc0-463a-8203-70d8677b1d6c)
 
 ___________________________________
 
